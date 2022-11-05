@@ -6,10 +6,27 @@
     <title>Contact Form</title>
 </head>
 <body>
-    <form action = "" method = "post">
+    <form action="" method = "POST">
         {% csrf_token %}
-        {{form }}
+        <label for="naam">
+            Naam:
+        </label> 
+        <input type="text" name="naam">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="">
+        <label for="onderwerp">Onderwerp:</label>
+        <input type="text" name="onderwerp" id="">
+        <label for="bericht">Bericht:</label>
+        <textarea name="bericht" id="" cols="30" rows="10"></textarea>
         <input type="submit" value="Submit">
+
+        {% if messages %}
+
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+
+        {% endif %}
     </form>
 </body>
 </html>
