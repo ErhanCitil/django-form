@@ -19,5 +19,5 @@ from form import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.insertdata, name='insertdata'),
+    path('index/', views.insertdata, name='insertdata'),
 ]
